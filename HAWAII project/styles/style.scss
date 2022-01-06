@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  display: flex;
+  div.logo {
+    display: flex;
+    img {
+      height: 6vw;
+      width: 6vw;
+    }
+  }
+
+  nav {
+  }
+}
