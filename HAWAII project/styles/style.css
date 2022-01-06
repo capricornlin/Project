@@ -19,16 +19,65 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 header div.logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 5;
+      -ms-flex: 5 1 400px;
+          flex: 5 1 400px;
+  margin-left: 2rem;
 }
 
 header div.logo img {
   height: 6vw;
   width: 6vw;
+}
+
+header nav {
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 400px;
+          flex: 2 1 400px;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header nav ul li a {
+  color: #09777d;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+@media screen and (max-width: 550px) {
+  header div.logo {
+    margin-left: 0.5rem;
+  }
+  header div.logo img {
+    height: 10vw;
+    width: 10vw;
+  }
+}
+
+main section.backimage {
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(../Pictures/pexels-photo-416676.jpeg);
 }
 /*# sourceMappingURL=style.css.map */

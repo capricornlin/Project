@@ -15,8 +15,13 @@ h6 {
 
 header {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   div.logo {
     display: flex;
+    align-items: center;
+    flex: 5 1 400px;
+    margin-left: 2rem;
     img {
       height: 6vw;
       width: 6vw;
@@ -24,5 +29,38 @@ header {
   }
 
   nav {
+    flex: 2 1 400px;
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      li {
+        a {
+          color: #09777d;
+          text-decoration: none;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:550px) {
+  header {
+    div.logo {
+      margin-left: 0.5rem;
+      img {
+        height: 10vw;
+        width: 10vw;
+      }
+    }
+  }
+}
+
+main {
+  section.backimage {
+    width: 100%;
+    min-height: 90vh;
+    background-image: url(../Pictures/pexels-photo-416676.jpeg);
   }
 }
