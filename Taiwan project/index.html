@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["Year", "GDP per capita"],
+          ["2020", 28358.295],
+          ["2021", 33401.709],
+          ["2022", 36227.09],
+          ["2023", 38396.977],
+          ["2024", 40749.601],
+          ["2025", 42801.84],
+          ["2026", 44978.598],
+        ]);
+
+        var options = {
+          title: "GDP per capita, current prices",
+          curveType: "function",
+          legend: { position: "bottom" },
+        };
+
+        var chart = new google.visualization.LineChart(
+          document.getElementById("curve_chart")
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./twicon/twicon.css" />
+    <title>TaiwanEcon</title>
+    <meta name="description" content="introduce taiwan economy" />
+  </head>
+  <body>
+    <!--標題-->
+    <header>
+      <h1><i class="twicon-main-island"></i> Taiwan economy</h1>
+      <h3 class="headertext">The last decade of GDP growth of Taiwan</h3>
+    </header>
+
+    <!--導覽列-->
+    <nav>
+      <ul>
+        <li>
+          <a class="active" href="#"
+            ><i class="twicon-main-island"></i> homepage</a
+          >
+        </li>
+        <li>
+          <a href="./second.html"><i class="twicon-green-man"></i> Industory</a>
+        </li>
+        <li>
+          <a href="./third.html"><i class="twicon-l-youbike"></i> Future</a>
+        </li>
+        <li>
+          <a href="./forth.html"><i class="twicon-black-bear"></i> Country</a>
+        </li>
+        <li>
+          <a href="./fifth.html"><i class="twicon-tapioca"></i> About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="left">
+        <p>
+          GDP in Taiwan is expected to reach 689.00 USD Billion by the end of
+          2021, according to Trading Economics global macro models and analysts
+          expectations. In the long-term, the Taiwan GDP is projected to trend
+          around 700.00 USD Billion in 2022 and 725.00 USD Billion in 2023,
+          according to our econometric models.
+        </p>
+        <br />
+        <p>
+          Taiwan’s services sector generates the highest share of its GDP, at
+          around 62 percent, though its industry sector also contributes about
+          35 percent to overall GDP in Taiwan. During the last decade, Taiwan
+          has consistently held a trade surplus, and is known for its exports of
+          electronics, machinery, and petrochemicals.
+        </p>
+        <br />
+        <div id="curve_chart"></div>
+      </section>
+      <section class="right">
+        <p>Taiwan is a Island Nation</p>
+        <br />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115631.4194093685!2d121.49146111170585!3d25.085545136564836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442ac6b61dbbd8b%3A0xbcd1baad5c06a482!2z5Y-w5YyX5biC!5e0!3m2!1szh-TW!2stw!4v1641096743500!5m2!1szh-TW!2stw"
+          width="200"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </section>
+    </main>
+  </body>
+</html>
