@@ -137,7 +137,7 @@ main section.pagetwo section.cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80vh;
+  min-height: 80vh;
   width: 80%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -198,43 +198,71 @@ section.pagetwo section.card {
   display: flex;
 }
 
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 40vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: #dbcccc;
+}
+
 footer div.footlogo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer div.footlogo img {
-  width: 6vw;
   height: 6vw;
+  width: 6vw;
 }
 
-footer div.contactweb {
-  width: 100%;
-  height: 20vh;
+footer nav {
+  width: 30%;
+}
+
+footer nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  list-style-type: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
-footer div.contactweb a {
-  font-size: 1.5rem;
-  color: black;
-  margin: 2rem;
-  text-decoration: none;
+footer nav ul li {
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
 }
 
-footer div.socialmedia img {
-  width: 6vw;
-  height: 6vw;
+footer nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+footer section.link a {
+  margin: 0rem 1rem;
+}
+
+footer section.link a img {
+  width: 3vw;
+  height: 3vw;
 }
 
 @media screen and (max-width: 550px) {
@@ -251,6 +279,14 @@ footer div.socialmedia img {
   main section.pagetwo section.cards div.card img {
     height: 30vw;
     width: 30vw;
+  }
+  footer div.footlogo img {
+    height: 10vw;
+    width: 10vw;
+  }
+  footer section.link a img {
+    height: 10vw;
+    width: 10vw;
   }
 }
 /*# sourceMappingURL=style.css.map */
