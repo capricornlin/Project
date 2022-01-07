@@ -65,6 +65,178 @@ header nav ul li a {
   font-size: 1.3rem;
 }
 
+main section.backimage {
+  width: 100%;
+  min-height: 90vh;
+  background-image: url(../Pictures/pexels-photo-416676.jpeg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+main section.backimage h3 {
+  font-size: 2.5rem;
+  color: white;
+  margin: 2rem 0rem;
+}
+
+main section.backimage button.start {
+  font-size: 1.5rem;
+  padding: 0.755rem 1.5rem;
+  background-color: #34b7c0;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+main section.backimage div.filter {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  min-height: 90vh;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+main section.pagetwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+main section.pagetwo h2 {
+  font-size: 2rem;
+  margin: 2rem 0rem;
+}
+
+main section.pagetwo section.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+  width: 80%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main section.pagetwo section.cards div.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+}
+
+main section.pagetwo section.cards div.card img {
+  margin: 1rem 0rem;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+}
+
+main section.pagetwo section.cards div.card h4 {
+  margin: 1rem 0rem;
+  font-size: 2rem;
+}
+
+main section.pagetwo section.cards div.card p {
+  margin: 1rem 0rem;
+  font-size: 1.25rem;
+}
+
+main section.pagetwo section.cards div.card a {
+  margin: 1rem 0rem;
+  background-color: #079289;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+section.pagetwo {
+  min-height: 100vh;
+}
+
+section.pagetwo section.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer div.footlogo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer div.footlogo img {
+  width: 6vw;
+  height: 6vw;
+}
+
+footer div.contactweb {
+  width: 100%;
+  height: 20vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer div.contactweb a {
+  font-size: 1.5rem;
+  color: black;
+  margin: 2rem;
+  text-decoration: none;
+}
+
+footer div.socialmedia img {
+  width: 6vw;
+  height: 6vw;
+}
+
 @media screen and (max-width: 550px) {
   header div.logo {
     margin-left: 0.5rem;
@@ -75,9 +247,10 @@ header nav ul li a {
   }
 }
 
-main section.backimage {
-  width: 100%;
-  min-height: 90vh;
-  background-image: url(../Pictures/pexels-photo-416676.jpeg);
+@media screen and (max-width: 750px) {
+  main section.pagetwo section.cards div.card img {
+    height: 30vw;
+    width: 30vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
