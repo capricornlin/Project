@@ -24,6 +24,13 @@ header {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+  -webkit-box-shadow: 3px 3px 5px 1px #ccc;
+          box-shadow: 3px 3px 5px 1px #ccc;
 }
 
 header div.logo {
@@ -98,7 +105,7 @@ main section.backimage h3 {
 main section.backimage button.start {
   font-size: 1.5rem;
   padding: 0.755rem 1.5rem;
-  background-color: #34b7c0;
+  background-color: #1e6e74;
   color: white;
   border: none;
   border-radius: 1rem;
@@ -162,11 +169,24 @@ main section.pagetwo section.cards div.card {
           flex: 1 1 300px;
 }
 
-main section.pagetwo section.cards div.card img {
-  margin: 1rem 0rem;
+main section.pagetwo section.cards div.card div.image-container {
+  overflow: hidden;
   height: 15vw;
   width: 15vw;
   border-radius: 50%;
+}
+
+main section.pagetwo section.cards div.card div.image-container img {
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+main section.pagetwo section.cards div.card div.image-container img:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 main section.pagetwo section.cards div.card h4 {
@@ -182,7 +202,7 @@ main section.pagetwo section.cards div.card p {
 main section.pagetwo section.cards div.card a {
   margin: 1rem 0rem;
   background-color: #079289;
-  color: white;
+  color: black;
   text-decoration: none;
   padding: 1rem 1.5rem;
   font-size: 1.25rem;
@@ -263,6 +283,27 @@ footer section.link a {
 footer section.link a img {
   width: 3vw;
   height: 3vw;
+}
+
+/**scrollbar*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #079289;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #04776f;
 }
 
 @media screen and (max-width: 550px) {
