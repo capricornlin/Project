@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  position: relative;
+}
+
+.green {
+  position: absolute;
+  top: -10vh;
+  right: 0;
+  z-index: -1;
+  width: 55vw;
+  height: 150vh;
+}
+
+header {
+  nav {
+    width: 100%;
+    ul {
+      width: 70%;
+      padding: 2rem;
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      li {
+        font-size: 2rem;
+        a {
+          color: black;
+          text-decoration: none;
+        }
+        a.active {
+          color: #1fcccc;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+
+  section.left {
+    padding: 2rem;
+    flex: 3 1 500px;
+  }
+
+  section.right {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      position: absolute;
+      border-radius: 50%;
+      width: 20vw;
+      height: 20vw;
+      top: 55vh;
+      right: 25vw;
+      transform: translateY(-50%);
+    }
+  }
+
+  section.table {
+    flex: 3 1 500px;
+    padding: 1rem;
+    table {
+      border-collapse: collapse;
+      tr {
+        border-bottom: 2px solid gray;
+        transition: all 0.2s ease;
+        td {
+          padding: 1rem;
+        }
+        &:hover {
+          background-color: #29e7e7;
+        }
+      }
+    }
+  }
+  section.picture {
+    flex: 1 1 600px;
+    position: relative;
+    img {
+      width: 20vw;
+      z-index: 1;
+    }
+    div.greenRec {
+      position: absolute;
+      width: 20vw;
+      height: 65vh;
+      background-color: #1fcccc;
+      top: 60px;
+      right: 250px;
+      z-index: -1;
+    }
+  }
+
+  section.form {
+    flex: 1 1 600px;
+    form {
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+  section.contact {
+    flex: 1 1 500px;
+  }
+}
+
+footer {
+  a {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .green {
+    opacity: 0.7;
+  }
+  header {
+    nav {
+      ul {
+        width: 100%;
+        flex-direction: column;
+        li {
+          padding: 1rem 0rem;
+          border-bottom: 2px solid gray;
+        }
+      }
+    }
+  }
+
+  main {
+    section.right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        margin: 1rem;
+        position: static;
+        transform: none;
+        width: 30vw;
+        height: 30vw;
+      }
+    }
+    section.picture {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 35vw;
+      }
+      div.greenRec {
+        display: none;
+      }
+    }
+  }
+}
