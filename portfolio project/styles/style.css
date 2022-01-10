@@ -134,7 +134,7 @@ main section.form {
 }
 
 main section.form form {
-  height: 50vh;
+  min-height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -144,12 +144,65 @@ main section.form form {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 1.5rem;
+}
+
+main section.form form div {
+  margin: 0.5rem;
+}
+
+main section.form form div label {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+main section.form form div input,
+main section.form form div textarea {
+  background-color: #24a0a0;
+  color: white;
+  font-size: 1.25rem;
+  padding: 0.5rem 0.25rem;
+  width: 90%;
+  border: none;
+}
+
+main section.form form div textarea {
+  vertical-align: top;
+}
+
+main section.form form button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 10rem;
+  background-color: #24a0a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}
+
+main div.line {
+  background-color: gray;
+  width: 3px;
 }
 
 main section.contact {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 500px;
           flex: 1 1 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main section.contact div.content h2 {
+  margin: 1rem 1rem;
 }
 
 footer a {
@@ -205,6 +258,9 @@ footer a {
     width: 35vw;
   }
   main section.picture div.greenRec {
+    display: none;
+  }
+  main div.line {
     display: none;
   }
 }
