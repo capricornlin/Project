@@ -86,16 +86,22 @@ body section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body section div.todo {
-  width: 30vw;
+  width: 40vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0.2rem 0rem;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
@@ -109,7 +115,7 @@ body section div.todo p {
 }
 
 body section div.todo p.todo-text {
-  width: 50%;
+  width: 30%;
 }
 
 body section div.todo p.todo-time {
@@ -131,6 +137,28 @@ body section div.todo button.remove {
 
 body section div.todo button.complete {
   background-color: green;
+}
+
+div.sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0rem;
+}
+
+div.sort button {
+  cursor: pointer;
+  background-color: #009272;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.75rem;
 }
 
 .done {
@@ -158,6 +186,28 @@ body section div.todo button.complete {
   to {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+@-webkit-keyframes scaleDown {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(0);
+            transform: scale(0);
   }
 }
 /*# sourceMappingURL=style.css.map */

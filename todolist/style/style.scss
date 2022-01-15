@@ -61,11 +61,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 
     div.todo {
-      width: 30vw;
+      width: 40vw;
       display: flex;
       align-items: center;
+      justify-content: center;
       margin: 0.2rem 0rem;
       transition: all 0.1s ease;
       p {
@@ -75,7 +77,7 @@ body {
         font-size: 1.75rem;
       }
       p.todo-text {
-        width: 50%;
+        width: 30%;
       }
       p.todo-time {
         width: 20%;
@@ -99,6 +101,21 @@ body {
   }
 }
 
+div.sort {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0rem;
+  button {
+    cursor: pointer;
+    background-color: rgb(0, 146, 114);
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.75rem;
+  }
+}
+
 .done {
   opacity: 0.5;
   text-decoration: line-through;
@@ -111,5 +128,14 @@ body {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
   }
 }
