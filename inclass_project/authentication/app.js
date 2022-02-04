@@ -14,6 +14,7 @@ const saltRounds = 10;
 app.set("view engine", "ejs");
 // middlewares
 app.use(express.static("public"));
+
 app.use(cookieParser("thisiscookies")); //string不一樣 簽名就會不一樣
 app.use(
   session({

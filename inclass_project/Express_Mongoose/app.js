@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const Student = require("./models/student"); //get Student model
 const methodOverride = require("method-override");
 
+//middLeware
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true})); //讓POST可以直接使用req.body
 app.set("view engine","ejs");
@@ -25,12 +26,16 @@ app.get("/",(req,res)=>{
     res.send("This is HomePage.");
 })
 
+
+
 app.get("/students",async (req,res)=>{ //要從database取的資料，所以用async function
     try{
         let data = await Student.find();
-    res.render("students.ejs",{data});  //將拿到的data丟進students.ejs裡面
+        res.render("students.ejs",{data});  //將拿到的data丟進students.ejs裡面
+        
     } catch{ //error handling
         res.send("Error with finging data");
+        
     }
 })
 
