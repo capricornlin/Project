@@ -1,0 +1,16 @@
+
+
+<!-- TODO: 因為有res.locals.error_msg的設定，所以所有的ejs都可以使用這個值 -->
+<% if(error_msg != ""){ %>
+    <div class="alert alert-waring alert-dismissible fade show role="alert">
+        <strong><%= error_msg %> </strong>
+    </div> 
+<% } %> 
+
+
+<!-- TODO: 因為有res.locals.sucess_msg的設定，所以所有的ejs都可以使用這個值 -->
+<% if(success_msg!="") {%>
+<div class="alert alert-waring alert-dismissible fade show role="alert">
+    <strong><%= success_msg %> </strong>
+</div> 
+<% } %> 
