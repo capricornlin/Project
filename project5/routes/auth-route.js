@@ -1,9 +1,7 @@
-//處理跟認證有關的路徑
-
 const router = require("express").Router();
 const passport = require("passport");
 const bcrypt = require("bcrypt");
-const User = require("../modules/user-module");
+const User = require("../models/user-model");
 
 router.get("/login", (req, res) => {
   res.render("login", { user: req.user });
@@ -18,15 +16,30 @@ router.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-//TODO: index.js裡面已經有bodyparser的設定了
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    failureRedirect: "/auth/login",
+    failureFlash: "Wrong email or password.",
+  }),
+  (req, res) => {
+    if (req.session.returnTo) {
+      let newPath = req.session.returnTo;
+      req.session.returnTo = "";
+      res.redirect(newPath);
+    } else {
+      res.redirect("/profile");
+    }
+  }
+);
+
 router.post("/signup", async (req, res) => {
   console.log(req.body);
   let { name, email, password } = req.body;
-  //check if data already in database
+  //check if the data is already in db
   const emailExist = await User.findOne({ email });
-  //TODO: 因為我們是先run index.js後才到這個auth-route
   if (emailExist) {
-    req.flash("error_msg", "Email is already been register.");
+    req.flash("error_msg", "Email has already been registered.");
     res.redirect("/auth/signup");
   }
 
@@ -35,29 +48,29 @@ router.post("/signup", async (req, res) => {
   let newUser = new User({ name, email, password });
   try {
     await newUser.save();
-    req.flash("success_msg", "Registration success. You can Login now.");
+    req.flash("success_msg", "Registration succeeds. You can login now.");
     res.redirect("/auth/login");
   } catch (err) {
-    console.log(err);
-    res.status(400).send(err);
+    req.flash("error_msg", err.errors.name.properties.message);
+    res.redirect("/auth/signup");
   }
 });
 
-//點下login with google
 router.get(
   "/google",
-  //middLeware
   passport.authenticate("google", {
     scope: ["profile", "email"],
-    //TODO: 如果希望使用者每次登入系統時，可以選擇登入的帳號，則需要加入
-    // scope: ["profile", "email"],
-    // prompt: "select_account",
   })
 );
 
-//輸入google完帳號密碼後
 router.get("/google/redirect", passport.authenticate("google"), (req, res) => {
-  res.redirect("/profile");
+  if (req.session.returnTo) {
+    let newPath = req.session.returnTo;
+    req.session.returnTo = "";
+    res.redirect(newPath);
+  } else {
+    res.redirect("/profile");
+  }
 });
 
 module.exports = router;

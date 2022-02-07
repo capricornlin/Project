@@ -5,7 +5,7 @@
     <title>Login</title>
   </head>
   <body>
-    <%- include ("partials/nav") %> 
+    <%- include ("partials/nav") %>
     <main style="padding: 3rem">
       <div class="row">
         <div ass="col-md-12">
@@ -27,6 +27,7 @@
       <br />
       <h4>Or... you have an account. Login here:</h2>
       <form  action="/auth/login" method="POST">
+        <%- include ("partials/message") %>
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input
@@ -54,7 +55,7 @@
         </div>
         <br />
         <button class="btn btn-primary">Submit</button>
-        <%- include("partials/message") %>
+        
       </form>
     </main>
   </body>
